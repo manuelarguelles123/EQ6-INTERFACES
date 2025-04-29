@@ -1,0 +1,850 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: auto 5px 1fr; /* Barra lateral, divisor, contenido principal */
+    height: calc(100vh - 60px); /* Altura total menos el encabezado */
+}
+
+/* Encabezado */
+.header {
+    background-color: #007bff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botones del encabezado */
+/* Botones del encabezado */
+.header-btn {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    border: none;
+    padding: 8px; /* Tamaño reducido */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente reducido */
+    transition: background-color 0.3s ease;
+    width: auto; /* Botones cuadrados */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-btn:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+
+.header-btn i {
+    font-size: 1.2rem; /* Tamaño del ícono */
+    color: inherit; /* Hereda el color del botón */
+
+}
+
+/* Modo oscuro para el encabezado */
+body.dark-mode .header {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark-mode .header-btn {
+    background-color: #218838;  /* Azul oscuro */
+}
+
+body.dark-mode .header-btn:hover {
+    background-color: #218838;  /* Azul más oscuro */
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 300px; /* Ancho inicial de la barra lateral */
+    min-width: 150px; /* Ancho mínimo */
+    max-width: 600px; /* Ancho máximo */
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    overflow-y: auto;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow-y: auto;
+    
+}
+
+/* Botones estilo pestañas */
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #ddd; /* Línea base para las pestañas */
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent; /* Línea azul solo para el botón activo */
+}
+
+.tab-btn:hover {
+    color: #0056b3;
+}
+
+.tab-btn.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff; /* Línea azul para el botón activo */
+}
+
+/* Barra de búsqueda */
+.search-container {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-btn i {
+    font-size: 1rem;
+}
+
+/* Eliminar viñetas de los menús */
+.sidebar-menu {
+    list-style: none; /* Elimina los puntos de viñetas */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-title {
+    font-size: 1.2rem;
+    color: #007bff; /* Azul fijo para los títulos */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.menu-title:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.menu-title i {
+    margin-right: 10px; /* Espaciado entre el ícono y el texto */
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 10px;
+    border-left: 2px solid var(--border-color); /* Línea vertical para diferenciar */
+}
+
+.submenu li {
+    color: var(--text-color); /* Usar el color del texto según el modo */
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.submenu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li:hover {
+    color: var(--btn-hover); /* Cambiar a un color destacado al pasar el mouse */
+}
+
+.submenu li a:hover {
+    background-color: var(--btn-bg); /* Fondo azul en modo claro */
+    color: #fff; /* Texto blanco al pasar el cursor */
+}
+
+.submenu li a i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.submenu li i {
+    margin-right: 10px;
+    color: #007bff; /* Azul para los íconos de los subtítulos */
+}
+
+/* Divisor redimensionable */
+.resizer {
+    background-color: #ddd;
+    cursor: col-resize;
+    width: 5px;
+    height: 100%;
+    position: relative;
+}
+
+.main-content {
+    display: flex; /* Habilita el uso de flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
+
+.content-header {
+    text-align: center; /* Centra el texto */
+}
+
+.content-header h1 {
+    font-size: 2rem;
+    color: var(--text-color); /* Usar la variable para el color del texto */
+}
+
+.content-header p {
+    font-size: 1rem;
+    color: var(--text-color); /* Usar la variable para el color del texto */
+}
+
+/* Título de la sección de recursos */
+.resources-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--sidebar-text);
+}
+
+/* Lista de recursos */
+.resources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Elementos de la lista de recursos */
+.resource-item {
+    margin: 10px 0;
+}
+
+.resource-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resource-item a:hover {
+    background-color: var(--btn-bg); /* Fondo azul en modo claro */
+    color: #fff; /* Texto blanco al pasar el cursor */
+}
+
+.resource-item a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: var(--btn-hover); /* Color del ícono */
+}
+
+.resources-list li {
+    margin-bottom: 10px;
+}
+
+.resources-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.resources-list a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal del cuadro de notas */
+.floating-notes-container {
+    position: fixed;
+    top: 10%;
+    right: 10px;
+    width: 400px;
+    max-height: 80vh; /* Limita la altura total del contenedor */
+    overflow: hidden; /* Asegura que los elementos hijos no desborden */
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos hijos en columna */
+    z-index: 1000;
+}
+.floating-notes-container.hidden {
+    display: none;
+}
+.hidden {
+    display: none !important;
+}
+
+.notes-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    resize: none;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.save-notes-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-notes-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor del histórico de notas */
+.notes-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre el título y la lista */
+    max-height: 100%; /* Asegura que no limite la altura del hijo */
+}
+
+.notes-history h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notes-list li {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.notes-list li.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Tooltip para el botón de notas */
+.header-btn.notes-btn {
+    position: relative;
+}
+
+.header-btn.notes-btn:hover::after {
+    content: "Notas"; /* Texto del tooltip */
+    position: absolute;
+    top: 100%; /* Mostrar el tooltip debajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-top: 5px; /* Espaciado entre el botón y el tooltip */
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.header-btn.notes-btn:hover::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 5px); /* Mostrar la flecha debajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    z-index: 1000;
+}
+
+
+#editor-container {
+    background-color: var(--card-bg); /* Fondo oscuro en modo oscuro */
+    color: var(--text-color); /* Texto blanco en modo oscuro */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 12px 12px 0 0;
+}
+
+.ql-container.ql-snow {
+    border-radius: 0 0 12px 12px;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.actions button {
+    background-color: #00b894;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.actions button:hover {
+    background-color: #019877;
+}
+
+
+/* Contenedor de la lista de notas con barra de desplazamiento */
+.note-list {
+    max-height:300px; /* Limita la altura al 70% del alto de la pantalla */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    padding: 10px;
+    margin: 0; /* Asegúrate de que no haya márgenes que afecten el diseño */
+    border: 1px solid var(--border-color); /* Borde para separar visualmente */
+    border-radius: 5px;
+    background-color: var(--card-bg); /* Fondo claro u oscuro según el modo */
+    transition: background-color 0.3s, color 0.3s;
+}
+/* Estilo de las notas individuales */
+.note-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.note-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.note-preview {
+    font-size: 16px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.note-actions button {
+    background-color: #00b894;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    transition: background-color 0.3s;
+}
+
+.note-actions button:hover {
+    background-color: #019877;
+}
+
+/* Divisor redimensionable */
+.resizer {
+    background-color: #ddd;
+    cursor: col-resize;
+    width: 5px;
+    height: 100%;
+    position: relative;
+}
+
+/* Variables para el modo claro */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --sidebar-bg: #fff;
+    --sidebar-text: #333;
+    --main-bg: #f8f9fa;
+    --main-text: #333;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --btn-bg: #0077cc;
+    --btn-hover: #005999;
+    --input-bg: #ffffff;
+    --input-text: #333;
+}
+
+/* Variables para el modo oscuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --sidebar-bg: #1e1e1e;
+    --sidebar-text: #f8f9fa;
+    --main-bg: #1e1e1e;
+    --main-text: #f8f9fa;
+    --card-bg: #2c2c2c; /* Fondo oscuro para contenedores */
+    --border-color: #555;
+    --btn-bg: #00b894;
+    --btn-hover: #019877;
+    --input-bg: #2c2c2c;
+    --input-text: #f8f9fa;
+}
+
+
+/* Aplicar las variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+}
+
+.main-content {
+    background-color: var(--main-bg);
+    color: var(--main-text);
+}
+
+#editor-container {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.note-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.note-actions button {
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.note-actions button:hover {
+    background-color: var(--btn-hover);
+}
+
+.search-input {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-input::placeholder {
+    color: var(--input-text);
+}
+
+.resources-list a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.resources-list a:hover {
+    text-decoration: underline;
+}
+
+.ql-container {
+    background-color: var(--card-bg); /* Fondo oscuro en modo oscuro */
+    color: var(--text-color); /* Texto blanco en modo oscuro */
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ql-editor {
+    background-color: var(--card-bg); /* Fondo oscuro en modo oscuro */
+    color: var(--text-color); /* Texto blanco en modo oscuro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ql-toolbar {
+    background-color: var(--card-bg); /* Fondo oscuro en modo oscuro */
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contenedor principal */
+.main-content-curso {
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    color: var(--text-color);
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow-y: auto; /* Permite el scroll vertical del contenido principal */
+    height: 100vh; /* Asegura que ocupe toda la altura disponible */
+}
+
+/* Encabezado del contenido */
+.content-header-curso h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 600;
+}
+
+.content-header-curso p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Sección de introducción */
+.course-intro-curso {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.course-intro-curso h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.course-intro-curso p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.intro-image-curso {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de módulos */
+.course-modules-curso {
+    margin-top: 30px;
+}
+
+.module-curso {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.module-curso:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.module-curso h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.module-curso p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.module-image-curso {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de recursos */
+.course-resources-curso {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.course-resources-curso h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.resources-list-curso {
+    list-style: none;
+    padding: 0;
+}
+
+.resources-list-curso li {
+    margin-bottom: 10px;
+}
+
+.resources-list-curso a {
+    font-size: 1rem;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.resources-list-curso a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Sección de actividades */
+.course-activities-curso {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.course-activities-curso h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.activities-list-curso {
+    list-style: none;
+    padding-left: 0;
+}
+
+.activities-list-curso li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    padding-left: 20px;
+    position: relative;
+}
+
+.activities-list-curso li::before {
+    content: '\2022'; /* Bullet point */
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Estilo para las imágenes del contenido principal */
+.module-image-curso {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 20px auto; /* Centra la imagen horizontalmente y agrega un margen vertical */
+    max-width: 70%; /* Limita el ancho máximo al 70% del contenedor */
+    height: 200px; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para un diseño más atractivo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de zoom y sombra al pasar el cursor */
+}
+
+.module-image-curso:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el cursor */
+}
+

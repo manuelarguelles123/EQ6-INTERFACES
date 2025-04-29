@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFT Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="IMG/img5.jpg">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="IMG/img5.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text">EFT Server</span>
+            </div>
+            <div class="menu">
+                <!-- Cuadro de búsqueda con ícono -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input id="search-box" type="text" class="search-input" placeholder="Buscar...">
+        </div>
+                <!-- Botón de notificaciones -->
+                <button id="notifications-btn" class="icon-btn" title="Notificaciones">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <!-- Botón de modo oscuro -->
+                <button id="theme-toggle-btn" class="icon-btn" title="Modo Oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Botón de usuario -->
+                <button class="icon-btn" title="Perfil de Usuario" onclick="location.href='user.html'">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cuadro de notificaciones -->
+        <div id="notifications-modal" class="notifications-modal hidden">
+            <div class="modal-content">
+                <i class="fas fa-bell"></i>
+                <p>Sin notificaciones</p>
+                <button id="close-notifications" class="close-btn">Cerrar</button>
+            </div>
+        </div>
+
+
+        <div class="banner">
+            <p><strong>¡Bienvenido a esta plataforma de aprendizaje! </strong></p>
+            <p>Explora el contenido y los recursos sobre servidores EFT para mejorar tus habilidades.</p>
+        </div>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <div class="learning-section">
+                <i class="fas fa-book learning-icon"></i>
+                <span class="learning-text">Mi aprendizaje</span>
+            </div>
+
+            <!-- Botones para alternar vistas (ubicados arriba del cuadro de búsqueda) -->
+            <div class="search-bar-container">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar curso, formación" class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="view-toggle">
+                    <button id="grid-view-btn" class="toggle-btn active" title="Vista en cuadrícula">
+                        <i class="fas fa-th"></i> <!-- Ícono de cuadrícula -->
+                    </button>
+                    <button id="list-view-btn" class="toggle-btn" title="Vista en lista">
+                        <i class="fas fa-list"></i> <!-- Ícono de lista -->
+                    </button>
+                </div>
+            </div>
+
+            <div id="course-container" class="course-list">
+                <a href="Curso.html" class="course-card-list">
+                    <img src="IMG/IMG1.png" alt="Curso 1">
+                    <div class="course-info">
+                        <h3>Introducción al servidor EFT</h3>
+                        <p>Aprende los conceptos básicos del servidor EFT y cómo configurarlo.</p>
+                    </div>
+                </a>
+                <a href="Curso2.html" class="course-card-list">
+                    <img src="IMG/IMG2.png" alt="Curso 2">
+                    <div class="course-info">
+                        <h3>Instalación y activación del software</h3>
+                        <p>Guía paso a paso para instalar y activar el software del servidor EFT.</p>
+                    </div>
+                </a>
+                <a href="Curso3.html" class="course-card-list">
+                    <img src="IMG/IMG3.jpeg" alt="Curso 3">
+                    <div class="course-info">
+                        <h3>Configuración del servidor EFT</h3>
+                        <p>Configura el servidor EFT para maximizar su rendimiento y seguridad.</p>
+                    </div>
+                </a>
+                <div class="course-card-list">
+                    <img src="IMG/IMG4.png" alt="Curso 4">
+                    <div class="course-info">
+                        <h3>Administración de usuarios</h3>
+                        <p>Aprende a gestionar usuarios y permisos en el servidor EFT.</p>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="IMG/IMG5.jpg" alt="Curso 5">
+                    <div class="course-info">
+                        <h3>Seguridad en el servidor EFT</h3>
+                        <p>Implementa medidas de seguridad para proteger tus datos.</p>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="IMG/IMG6.jpg" alt="Curso 6">
+                    <div class="course-info">
+                        <h3>Automatización de procesos</h3>
+                        <p>Configura tareas automatizadas para optimizar el flujo de trabajo.</p>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="IMG/IMG7.png" alt="Curso 7">
+                    <div class="course-info">
+                        <h3>Integración con otros sistemas</h3>
+                        <p>Conecta el servidor EFT con otros sistemas empresariales.</p>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="IMG/IMG1.png" alt="Curso 8">
+                    <div class="course-info">
+                        <h3>Resolución de problemas</h3>
+                        <p>Identifica y soluciona problemas comunes en el servidor EFT.</p>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="IMG/IMG1.png" alt="Curso 9">
+                    <div class="course-info">
+                        <h3>Actualizaciones y mantenimiento</h3>
+                        <p>Mantén tu servidor EFT actualizado y funcionando correctamente.</p>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+        <section class="content achievements-section">
+            <!-- Contenido reciente -->
+            <div class="recent-content">
+                <h2>Contenido reciente</h2>
+                <div class="recent-item">
+                    <p>📘 Comandos del servidor EFT</p>
+                </div>
+                <div class="recent-item">
+                    <p>📘 El módulo HS-PCI</p>
+                </div>
+                <div class="recent-item">
+                    <p>📘 El módulo AS2</p>
+                </div>
+            </div>
+
+            <!-- Notas -->
+            <div class="notes-section">
+                <h2>Notas</h2>
+                <!-- Opciones de formato -->
+                <div class="notes-toolbar">
+                    <button id="bold-btn" class="toolbar-btn" title="Negrita">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button id="italic-btn" class="toolbar-btn" title="Cursiva">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button id="underline-btn" class="toolbar-btn" title="Subrayado">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button id="bullets-btn" class="toolbar-btn" title="Lista con viñetas">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button id="numbered-btn" class="toolbar-btn" title="Lista numerada">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button id="font-size-increase-btn" class="toolbar-btn" title="Aumentar tamaño de fuente">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                    <button id="font-size-decrease-btn" class="toolbar-btn" title="Disminuir tamaño de fuente">
+                        <i class="fas fa-text-width"></i>
+                    </button>
+                </div>
+                <!-- Área de notas -->
+                <div class="notes-input" contenteditable="true" placeholder="Escribe tus notas aquí..."></div>
+                <button class="save-notes-btn" onclick="saveNote()">Guardar Nota</button>
+                <!-- Histórico de notas -->
+                <div class="notes-history">
+                    <h3>Histórico de Notas</h3>
+                    <ul class="notes-list"></ul>
+                </div>
+                <div class="notes-controls">
+                    <button id="edit-note-btn" onclick="editNote()" disabled>Editar Nota</button>
+                    <button id="delete-note-btn" onclick="deleteNote()" disabled>Borrar Nota</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

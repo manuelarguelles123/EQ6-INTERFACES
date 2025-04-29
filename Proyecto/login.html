@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>EFT Server</title>
+    <link rel="stylesheet"
+        href="https://legacy.netacad.com/portal/sites/all/themes/custom/cisco_ui_kit/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="icon" type="image/x-icon" href="IMG/img5.jpg">
+</head>
+
+<body>
+    <!-- Botón para alternar el modo oscuro -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+
+    <main id="main-content">
+        <div class="main-content">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h2>Bienvenido a EFT Server</h2>
+                        <p>* Cambiar por una frase 3 *</p>
+                    </div>
+                </div>
+
+                <div class="container base-padding">
+                    <div class="content-row">
+                        <!-- Sección izquierda -->
+                        <div class="text-content">
+                            <h4>Mejore sus habilidades acerca de servidores EFT</h4>
+                            <p>Los servidores EFT (Electronic File Transfer) son sistemas diseñados para transferir
+                                archivos de manera rápida, segura y automatizada. Son clave en empresas que manejan
+                                grandes volúmenes de datos, ya que garantizan protección, cumplimiento normativo y
+                                eficiencia en los procesos de intercambio de información.</p>
+                            <img src="IMG/LOGIN1.png" alt="Descripción de la imagen">
+                        </div>
+
+                        <!-- Divisor vertical -->
+                        <div class="divider-vertical"></div>
+
+                        <!-- Sección derecha -->
+                        <div class="login-container">
+                            <h2>Inicie sesión en su cuenta</h2>
+                            <input type="text" id="username" placeholder="Usuario">
+                            <input type="password" id="password" placeholder="Contraseña">
+                            <button id="login-btn">Iniciar sesión</button>
+                            <p class="register">¿No tienes una cuenta? <a href="NEX_USER.html">Crea una aquí</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <!-- Script para redirección y modo oscuro -->
+    <script>
+        // Cargar usuarios desde localStorage o usar los predeterminados
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
+            { username: "admin", password: "1234" },
+            { username: "test", password: "test123" }
+        ];
+    
+        // Validar login
+        function validarLogin() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+    
+            // Verificar si los campos están vacíos
+            if (!username || !password) {
+                alert('Por favor, complete todos los campos.');
+                return; // Detener la ejecución si los campos están vacíos
+            }
+    
+            const usuarioValido = usuarios.find(user => user.username === username && user.password === password);
+    
+            if (usuarioValido) {
+                alert('Login exitoso');
+                redirectToIndex(); // Llama a la función existente para redirigir
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+    
+        // Agregar evento al botón de login
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginBtn = document.getElementById('login-btn');
+            if (loginBtn) {
+                loginBtn.addEventListener('click', (event) => {
+                    event.preventDefault(); // Evita la redirección inmediata
+                    validarLogin();
+                });
+            }
+        });
+    
+        // Función de modo oscuro
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+    
+            // Verifica si el modo oscuro está activado en el almacenamiento local
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                body.classList.add('dark-mode');
+            }
+    
+            // Alternar modo oscuro
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                }
+            });
+        });
+    
+        // Función para redirigir al index
+        function redirectToIndex() {
+            window.location.href = "index.html"; // Cambia "index.html" si está en otra ruta
+        }
+    </script>
+</body>
+
+</html>

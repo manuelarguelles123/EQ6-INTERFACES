@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquema de Curso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css3.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="curso.js" defer></script>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="header-left">
+            <img src="IMG/img5.jpg" alt="Logo" class="logo">
+            <h1 class="header-title">Introducción al servidor EFT</h1>
+        </div>
+        <div class="header-buttons">
+            <button class="header-btn notes-btn">
+                <i class="fas fa-pencil-alt"></i> Notas
+            </button>
+            <button class="header-btn" id="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="header-btn" id="home-btn" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i>
+            </button>
+            <button class="header-btn" id="user-btn" onclick="location.href='user.html'">
+                <i class="fas fa-user"></i>
+            </button>
+            
+        </div>
+        
+    </header>
+
+    <div class="dashboard">
+        <!-- Barra lateral -->
+<aside class="sidebar" id="sidebar">
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showTab('course')">Esquema de Curso</button>
+        <button class="tab-btn" onclick="showTab('resources')">Recursos</button>
+    </div>
+    <div id="course-content" class="tab-content">
+        <div class="search-container">
+            <input type="text" placeholder="Buscar esquema del curso" class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="sidebar-menu">
+            <!-- Tema principal -->
+            <li class="menu-item">
+                <h3 class="menu-title" onclick="toggleSubmenu(this)">
+                    <i class="fas fa-chevron-down"></i> Introducción al servidor EFT
+                </h3>
+                <ul class="submenu">
+                    <!-- Subtemas (módulos) -->
+                    <li><a href="#module1"><i class="fas fa-chevron-right"></i> Tema 1: Introduction to EFT Server</a></li>
+                    <li><a href="#module2"><i class="fas fa-chevron-right"></i> Tema 2: Transferencias seguras de archivos</a></li>
+                    <li><a href="#module3"><i class="fas fa-chevron-right"></i> Tema 3: Seguridad ampliada del servidor EFT</a></li>
+                    <li><a href="#module4"><i class="fas fa-chevron-right"></i> Tema 4: Apoyo</a></li>
+                    <li><a href="#module5"><i class="fas fa-chevron-right"></i> Tema 5: ¿Qué hay de nuevo en el servidor EFT?</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="resources-content" class="tab-content" style="display: none;">
+        <h2 class="resources-title">Recursos</h2>
+        <ul class="resources-list">
+            <!-- Videos de YouTube -->
+            <li class="resource-item">
+                <a href="https://www.youtube.com/watch?v=example1" target="_blank">
+                    <i class="fas fa-video"></i> Video 1: Introducción al servidor EFT
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://www.youtube.com/watch?v=example2" target="_blank">
+                    <i class="fas fa-video"></i> Video 2: Configuración básica del servidor EFT
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://www.youtube.com/watch?v=example3" target="_blank">
+                    <i class="fas fa-video"></i> Video 3: Seguridad y cumplimiento en EFT
+                </a>
+            </li>
+    
+            <!-- Archivos o documentos -->
+            <li class="resource-item">
+                <a href="docs/manual_usuario.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Manual de usuario del servidor EFT
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="docs/guia_configuracion.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Guía de configuración básica
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="docs/seguridad_eficiencia.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Seguridad y eficiencia en EFT
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+        <!-- Divisor redimensionable -->
+        <div class="resizer"></div>
+
+       <!-- Contenido principal -->
+       <main class="main-content-curso">
+        <div class="content-header-curso" id="intro-eft">
+            <h1>Introducción al servidor EFT</h1>
+            <p>Explora los temas clave para aprender sobre el servidor EFT y sus funcionalidades avanzadas.</p>
+        </div>
+    
+        <!-- Sección de introducción -->
+        <section class="course-intro-curso">
+            <p>
+                Este curso está diseñado para proporcionarte las herramientas necesarias para aprender sobre el servidor EFT. A continuación, encontrarás los módulos, recursos y actividades que te ayudarán a alcanzar tus objetivos.
+            </p>
+            <img src="IMG/IMG1.png" alt="Imagen del Tema 1" class="module-image-curso">
+        </section>
+    
+        <!-- Sección de módulos -->
+        <section class="course-modules-curso">
+            <h2>Módulos del Curso</h2>
+    
+            <!-- Módulo 1 -->
+            <article class="module-curso" id="module1">
+                <h3>Tema 1: Introduction to EFT Server</h3>
+                <p>
+                    El servidor de transferencia de archivos mejorada (EFT) de GlobalSCAPE es un archivo administrado transfer...
+                </p>
+                <ul>
+                    <li><strong>¿Qué es el servidor EFT?</strong> Una solución modular que permite a las empresas gestionar transferencias de datos de forma segura y rentable.</li>
+                    <li><strong>Principales características y beneficios:</strong> Alternativa a líneas arrendadas, VPNs y soluciones personalizadas, con opciones de escalabilidad para empresas de todos los tamaños.</li>
+                    <li><strong>Casos de uso comunes:</strong> Transferencias seguras entre socios comerciales, clientes y oficinas remotas.</li>
+                </ul>
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 1" class="module-image-curso">
+            </article>
+    
+            <!-- Módulo 2 -->
+            <article class="module-curso" id="module2">
+                <h3>Tema 2: Transferencias seguras de archivos</h3>
+                <p>
+                    Datos está protegido y controlado durante el tránsito y el almacenamiento, y es totalmente auditable durante ese proceso...
+                </p>
+                <ul>
+                    <li><strong>Protocolos seguros:</strong> Protección de la propiedad intelectual, secretos comerciales, y los archivos de los clientes transferidos a través de Internet mediante protocolos que incluyen FTPS (SSL/TLS), SFTP (SSH2), HTTPS y AS2.</li>
+                    <li><strong>Implementación simple:</strong> Cumplimiento de los requisitos reglamentarios y de privacidad como PCI DSS, HIPAA...</li>
+                    <li><strong>Mantenimiento automático de archivos programables:</strong> Automatiza acciones como supervisar carpetas, enviar notificaciones por correo electrónico y eliminar datos antiguos.</li>
+                </ul>
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 2" class="module-image-curso">
+            </article>
+    
+            <!-- Módulo 3 -->
+            <article class="module-curso" id="module3">
+                <h3>Tema 3: Seguridad ampliada del servidor EFT</h3>
+                <p>
+                    Explora las opciones avanzadas de seguridad del servidor EFT, incluyendo módulos adicionales que mejoran la protección de los datos y la auditoría...
+                </p>
+                <ul>
+                    <li><strong>AS2 Módulo:</strong> Permite el intercambio seguro de datos empresariales mediante HTTP/HTTPS...</li>
+                    <li><strong>HS-PCI Módulo - Servidor:</strong> Facilita el cumplimiento de PCI DSS para proteger datos financieros y confidenciales.</li>
+                    <li><strong>Auditoría y Módulo de Informes (ARM):</strong> Genera informes detallados y realiza auditorías de actividades...</li>
+                </ul>
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 3" class="module-image-curso">
+            </article>
+    
+            <!-- Módulo 4 -->
+            <article class="module-curso" id="module4">
+                <h3>Tema 4: Apoyo</h3>
+                <p>
+                    Aprende cómo acceder al soporte técnico del servidor EFT, incluyendo documentación, foros y asistencia directa para resolver problemas...
+                </p>
+                <ul>
+                    <li><strong>Documentación oficial:</strong> Guías de usuario y manuales técnicos para configurar y administrar el servidor EFT.</li>
+                    <li><strong>Foros de la comunidad:</strong> Espacios para resolver dudas y compartir experiencias con otros usuarios.</li>
+                    <li><strong>Asistencia técnica personalizada:</strong> Soporte por correo electrónico o teléfono para resolver problemas específicos.</li>
+                </ul>
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 4" class="module-image-curso">
+            </article>
+    
+            <!-- Módulo 5 -->
+            <article class="module-curso" id="module5">
+                <h3>Tema 5: ¿Qué hay de nuevo en el servidor EFT?</h3>
+                <p>
+                    Descubre las últimas actualizaciones y características del servidor EFT, incluyendo mejoras en la seguridad, rendimiento y nuevas funcionalidades...
+                </p>
+                <ul>
+                    <li><strong>Mejoras en la seguridad:</strong> Nuevas herramientas para cumplir con estándares como PCI DSS y HIPAA.</li>
+                    <li><strong>Optimización del rendimiento:</strong> Actualizaciones para mejorar la velocidad y eficiencia de las transferencias.</li>
+                    <li><strong>Nuevas funcionalidades:</strong> Herramientas avanzadas para la gestión de usuarios y automatización de tareas.</li>
+                </ul>
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 5" class="module-image-curso">
+            </article>
+        </section>
+    </main>
+    
+
+    <!-- Cuadro de notas flotante -->
+    <div class="floating-notes-container hidden">
+        <h2>Notas</h2>
+        <div id="editor-container">
+            <div id="editor"></div>
+        </div>
+        <div class="actions">
+            <button onclick="saveNote()">Guardar Nota</button>
+        </div>
+        <div class="notes-history">
+            <h3>Histórico de Notas</h3>
+            <div class="note-list" id="note-list"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+</body>
+
+</html>

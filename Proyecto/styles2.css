@@ -1,0 +1,291 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.divider-vertical {
+    width: 2px;
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    height: auto;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 10px;
+    text-align: center; /* Centra el título y el contenido */
+}
+
+.text-content h4 {
+    color: #007bff;
+    text-align: center; /* Centra el título */
+}
+
+.text-content p {
+    line-height: 1.6;
+    color: #555;
+    text-align: justify; /* Justifica el texto descriptivo */
+}
+
+.text-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px;
+}
+
+.login-container h2 {
+    color: #007bff;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.register {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.register a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .login-container {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark-mode a {
+    color: #4caf50;
+}
+
+body.dark-mode .text-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .divider-vertical {
+    background-color: #444;
+}
+
+body.dark-mode .content-row {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"] {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+body.dark-mode input[type="email"]::placeholder,
+body.dark-mode input[type="password"]::placeholder {
+    color: #aaaaaa;
+}
+
+/* Botón de Iniciar Sesión */
+.login-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+body.dark-mode .login-container button {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+body.dark-mode .login-container button:hover {
+    background-color: #003f8a;
+}
+
+/* Enlace "Crea una aquí" */
+.register a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+body.dark-mode .register a {
+    color: #4caf50;
+}
+
+body.dark-mode .register a:hover {
+    color: #45a049;
+}
+
+/* Botón de Modo Oscuro */
+#dark-mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .login-container input {
+        font-size: 0.9rem;
+    }
+
+    .login-container button {
+        font-size: 0.9rem;
+    }
+}
+
+ /* Estilos generales para los campos de entrada */
+ .login-container input {
+    background-color: #ffffff; /* Fondo claro por defecto */
+    color: #000000; /* Texto oscuro por defecto */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode .login-container input {
+    background-color: #333333; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    border: 1px solid #555555; /* Borde más oscuro */
+}
+
+/* Estilos para el botón de modo oscuro */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #0056b3;
+}

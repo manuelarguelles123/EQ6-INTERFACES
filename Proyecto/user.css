@@ -1,0 +1,129 @@
+/* Estilos para el perfil de usuario */
+.user-profile {
+    padding: 20px;
+    max-width: 90%; /* Más ancho */
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.profile-icon {
+    font-size: 5rem;
+    color: #007bff;
+}
+
+.profile-info h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.profile-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px;
+}
+
+.profile-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modo oscuro */
+body.dark-mode .user-profile {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode .profile-section {
+    background-color: #444;
+    border-color: #555;
+}
+
+body.dark-mode .profile-info h1,
+body.dark-mode .profile-info p,
+body.dark-mode .form-group label {
+    color: #f8f9fa;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+    background-color: #555;
+    color: #f8f9fa;
+    border-color: #666;
+}
+
+body.dark-mode .btn {
+    background-color: #0056b3;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #003f8a;
+}

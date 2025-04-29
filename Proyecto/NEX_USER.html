@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="icon" type="image/x-icon" href="IMG/img5.jpg">
+    <style>
+        /* Estilos para centrar el formulario y ajustar el ancho */
+        .login-container {
+            width: 30%; /* Ocupa el 30% del ancho */
+            margin: 0 auto; /* Centra horizontalmente */
+            padding: 20px;
+            background-color: #f9f9f9; /* Fondo claro */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-container p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-container p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Botón para alternar el modo oscuro -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+
+    <main id="main-content">
+        <div class="main-content">
+            <div class="login-container">
+                <h2>Crear una cuenta</h2>
+                <form id="register-form">
+                    <label for="new-username">Nombre de usuario:</label>
+                    <input type="text" id="new-username" placeholder="Ingrese un nombre de usuario" required>
+                    <label for="new-password">Contraseña:</label>
+                    <input type="password" id="new-password" placeholder="Ingrese una contraseña" required>
+                    <button type="submit" id="register-btn">Registrar</button>
+                </form>
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Footer / añadir redes?</p>
+    </footer>
+
+    <script>
+        // Cargar usuarios desde localStorage o usar los predeterminados
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
+            { username: "admin", password: "1234" },
+            { username: "test", password: "test123" }
+        ];
+    
+        // Manejar el registro de un nuevo usuario
+        document.getElementById('register-form').addEventListener('submit', (event) => {
+            event.preventDefault(); // Evita el envío del formulario
+    
+            const newUsername = document.getElementById('new-username').value.trim();
+            const newPassword = document.getElementById('new-password').value.trim();
+    
+            // Verificar si los campos están vacíos
+            if (!newUsername || !newPassword) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+    
+            // Verificar si el usuario ya existe
+            const usuarioExistente = usuarios.find(user => user.username === newUsername);
+            if (usuarioExistente) {
+                alert('El nombre de usuario ya está en uso. Por favor, elija otro.');
+                return;
+            }
+    
+            // Agregar el nuevo usuario al arreglo
+            usuarios.push({ username: newUsername, password: newPassword });
+    
+            // Guardar usuarios en localStorage
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    
+            alert('Usuario registrado exitosamente.');
+    
+            // Redirigir al login
+            window.location.href = "login.html";
+        });
+    
+        // Función de modo oscuro
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+    
+            // Verifica si el modo oscuro está activado en el almacenamiento local
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                body.classList.add('dark-mode');
+            }
+    
+            // Alternar modo oscuro
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
