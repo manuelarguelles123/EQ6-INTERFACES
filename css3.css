@@ -6,6 +6,10 @@ body {
     color: #333;
 }
 
+div, ul, ol {
+    text-align: justify;
+    text-justify: inter-word;
+}
 .dashboard {
     display: grid;
     grid-template-columns: auto 5px 1fr; /* Barra lateral, divisor, contenido principal */

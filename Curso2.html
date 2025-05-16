@@ -59,11 +59,11 @@
                 </h3>
                 <ul class="submenu">
                     <!-- Subtemas (módulos) -->
-                    <li><a href="#module1"><i class="fas fa-chevron-right"></i> Tema 1: Introduction to EFT Server</a></li>
-                    <li><a href="#module2"><i class="fas fa-chevron-right"></i> Tema 2: Transferencias seguras de archivos</a></li>
-                    <li><a href="#module3"><i class="fas fa-chevron-right"></i> Tema 3: Seguridad ampliada del servidor EFT</a></li>
-                    <li><a href="#module4"><i class="fas fa-chevron-right"></i> Tema 4: Apoyo</a></li>
-                    <li><a href="#module5"><i class="fas fa-chevron-right"></i> Tema 5: ¿Qué hay de nuevo en el servidor EFT?</a></li>
+                    <li><a href="#module1"><i class="fas fa-chevron-right"></i> Tema 1: Escenarios de despliegue para servidores EFT</a></li>
+                    <li><a href="#module2"><i class="fas fa-chevron-right"></i> Tema 2: Servidor EFT en una zona desmilitarizada (DMZ)</a></li>
+                    <li><a href="#module3"><i class="fas fa-chevron-right"></i> Tema 3: Despliegue del servidor EFT y la Puerta de enlace DMZ</a></li>
+                    <!--<li><a href="#module4"><i class="fas fa-chevron-right"></i> Tema 4: Apoyo</a></li>
+                    <li><a href="#module5"><i class="fas fa-chevron-right"></i> Tema 5: ¿Qué hay de nuevo en el servidor EFT?</a></li>-->
                 </ul>
             </li>
         </ul>
@@ -73,28 +73,28 @@
         <ul class="resources-list">
             <!-- Videos de YouTube -->
             <li class="resource-item">
-                <a href="https://www.youtube.com/watch?v=example1" target="_blank">
-                    <i class="fas fa-video"></i> Video 1: Introducción al servidor EFT
+                <a href="https://www.youtube.com/watch?v=dqlzQXo1wqo" target="_blank">
+                    <i class="fas fa-video"></i> Video 1: ¿Qué es una DMZ?
                 </a>
             </li>
             <li class="resource-item">
-                <a href="https://www.youtube.com/watch?v=example2" target="_blank">
-                    <i class="fas fa-video"></i> Video 2: Configuración básica del servidor EFT
+                <a href="https://www.youtube.com/watch?v=GvIHI9HIalk" target="_blank">
+                    <i class="fas fa-video"></i> Video 2: Integración de EFT Server a una DMZ
                 </a>
             </li>
-            <li class="resource-item">
+            <!--<li class="resource-item">
                 <a href="https://www.youtube.com/watch?v=example3" target="_blank">
                     <i class="fas fa-video"></i> Video 3: Seguridad y cumplimiento en EFT
                 </a>
-            </li>
+            </li>-->
     
             <!-- Archivos o documentos -->
             <li class="resource-item">
-                <a href="docs/manual_usuario.pdf" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Manual de usuario del servidor EFT
+                <a href="docs/gs-dmz-gateway-ds.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Manual de una DMZ
                 </a>
             </li>
-            <li class="resource-item">
+            <!--<li class="resource-item">
                 <a href="docs/guia_configuracion.pdf" target="_blank">
                     <i class="fas fa-file-pdf"></i> Guía de configuración básica
                 </a>
@@ -103,7 +103,7 @@
                 <a href="docs/seguridad_eficiencia.pdf" target="_blank">
                     <i class="fas fa-file-pdf"></i> Seguridad y eficiencia en EFT
                 </a>
-            </li>
+            </li>-->
         </ul>
     </div>
 </aside>
@@ -114,8 +114,8 @@
        <!-- Contenido principal -->
        <main class="main-content-curso">
         <div class="content-header-curso" id="intro-eft">
-            <h1>Introducción al servidor EFT</h1>
-            <p>Explora los temas clave para aprender sobre el servidor EFT y sus funcionalidades avanzadas.</p>
+            <h1>Instalando y Activando el software</h1>
+            <p>Para usar el tipo de servidores EFT, hay que saber instalarlos y configurarlos, aprende a como hacerlo a continuacion.</p>
         </div>
     
         <!-- Sección de introducción -->
@@ -123,7 +123,7 @@
             <p>
                 Este curso está diseñado para proporcionarte las herramientas necesarias para aprender sobre el servidor EFT. A continuación, encontrarás los módulos, recursos y actividades que te ayudarán a alcanzar tus objetivos.
             </p>
-            <img src="IMG/IMG1.png" alt="Imagen del Tema 1" class="module-image-curso">
+            <img src="IMG/IMG_Course2.png" alt="Imagen del Tema 2" class="module-image-curso">
         </section>
     
         <!-- Sección de módulos -->
@@ -132,48 +132,59 @@
     
             <!-- Módulo 1 -->
             <article class="module-curso" id="module1">
-                <h3>Tema 1: Introduction to EFT Server</h3>
+                <h3>Tema 1: Escenarios de despliegue para servidores EFT</h3>
                 <p>
-                    El servidor de transferencia de archivos mejorada (EFT) de GlobalSCAPE es un archivo administrado transfer...
+                    Tiene varias opciones para configurar el servidor EFT en su arquitectura de red.
+                    A continuación, se describen algunos escenarios de implementación comunes.
+                    Si ninguno de estos escenarios se ajusta a sus necesidades, el equipo de Servicios Profesionales de GlobalSCAPE
+                    puede colaborar con usted para diseñar una arquitectura personalizada, asistirle con la instalación y 
+                    la configuración inicial, y ayudarle a crear scripts, reglas de eventos, comandos y bases de datos de usuarios externos personalizados.
                 </p>
-                <ul>
+                <!--<ul>
                     <li><strong>¿Qué es el servidor EFT?</strong> Una solución modular que permite a las empresas gestionar transferencias de datos de forma segura y rentable.</li>
                     <li><strong>Principales características y beneficios:</strong> Alternativa a líneas arrendadas, VPNs y soluciones personalizadas, con opciones de escalabilidad para empresas de todos los tamaños.</li>
                     <li><strong>Casos de uso comunes:</strong> Transferencias seguras entre socios comerciales, clientes y oficinas remotas.</li>
                 </ul>
-                <img src="IMG/IMG1.png" alt="Imagen del Tema 1" class="module-image-curso">
+                <img src="IMG/IMG1.png" alt="Imagen del Tema 1" class="module-image-curso">-->
             </article>
     
             <!-- Módulo 2 -->
             <article class="module-curso" id="module2">
-                <h3>Tema 2: Transferencias seguras de archivos</h3>
+                <h3>Tema 2: Servidor EFT en una zona desmilitarizada (DMZ)</h3>
                 <p>
-                    Datos está protegido y controlado durante el tránsito y el almacenamiento, y es totalmente auditable durante ese proceso...
+                    En el escenario de implementación más básico, tanto los usuarios finales como los socios comerciales (clientes) se comunican con el servidor EFT, ya que este reside en la DMZ de su organización. Todas las solicitudes de autenticación del servicio de directorio y el almacenamiento de datos se realizan dentro de la zona desmilitarizada.
+                    El servidor EFT puede configurarse para reenviar todos los datos recibidos a la red de back-end y así mitigar los riesgos asociados a su almacenamiento en la DMZ. Esta arquitectura, comúnmente conocida como almacenamiento y reenvío, implica que los datos solo residen en la DMZ temporalmente antes de ser transferidos a un sistema de back-end para su procesamiento o almacenamiento. Esta arquitectura de almacenamiento y reenvío requiere una perforación en el cortafuegos de oeste a este, lo que supone una desviación de las mejores prácticas de seguridad. Esta arquitectura es la más utilizada por los competidores de la solución del servidor EFT de GlobalSCAPE.                    
                 </p>
-                <ul>
+                <!--<ul>
                     <li><strong>Protocolos seguros:</strong> Protección de la propiedad intelectual, secretos comerciales, y los archivos de los clientes transferidos a través de Internet mediante protocolos que incluyen FTPS (SSL/TLS), SFTP (SSH2), HTTPS y AS2.</li>
                     <li><strong>Implementación simple:</strong> Cumplimiento de los requisitos reglamentarios y de privacidad como PCI DSS, HIPAA...</li>
                     <li><strong>Mantenimiento automático de archivos programables:</strong> Automatiza acciones como supervisar carpetas, enviar notificaciones por correo electrónico y eliminar datos antiguos.</li>
-                </ul>
-                <img src="IMG/IMG1.png" alt="Imagen del Tema 2" class="module-image-curso">
+                </ul>-->
+                <img src="IMG/IMG_Course2_Topic2.gif" alt="Imagen del Tema 2" class="module-image-curso">
             </article>
     
             <!-- Módulo 3 -->
             <article class="module-curso" id="module3">
-                <h3>Tema 3: Seguridad ampliada del servidor EFT</h3>
+                <h3>Tema 3: Despliegue del servidor EFT y la Puerta de enlace DMZ</h3>
                 <p>
-                    Explora las opciones avanzadas de seguridad del servidor EFT, incluyendo módulos adicionales que mejoran la protección de los datos y la auditoría...
+                    La solución de seguridad ideal consiste en implementar una arquitectura de dos niveles: el servidor EFT, implementado tras el firewall corporativo, y la puerta de enlace DMZ del servidor EFT, implementada dentro de la zona desmilitarizada. Esta configuración se conoce como configuración de transmisión o de paso a través.
                 </p>
+                <img src="IMG/IMG_Course2_Topic3.gif" alt="Imagen del Tema 3" class="module-image-curso">
                 <ul>
-                    <li><strong>AS2 Módulo:</strong> Permite el intercambio seguro de datos empresariales mediante HTTP/HTTPS...</li>
-                    <li><strong>HS-PCI Módulo - Servidor:</strong> Facilita el cumplimiento de PCI DSS para proteger datos financieros y confidenciales.</li>
-                    <li><strong>Auditoría y Módulo de Informes (ARM):</strong> Genera informes detallados y realiza auditorías de actividades...</li>
+                    <li><strong>Servidor EFT a servidor EFT:</strong> Existen diversos enfoques híbridos que consisten en múltiples servidores con diversas configuraciones para distintos casos de uso empresarial. Por ejemplo, un escenario en el que la mayor parte del tráfico es de empuje saliente con ocasionalmente de extracción entrante, iniciado por un script automatizado o un proceso por lotes. En este escenario, los datos se generan tras el firewall corporativo y luego se reenvían de un servidor EFT a otro servidor EFT ubicado en la DMZ para la recogida del cliente, o directamente del servidor backend a un servidor de destino ubicado en la ubicación del socio.
+                        <img src="IMG/IMG_Course2_Topic3_li1.gif" alt="Imagen del Tema 3 li 1" class="module-image-curso">
+                    </li>
+                    <li><strong>2 Servidores EFT y una puerta de enlace DMZ:</strong> En este escenario de implementación híbrida, una transacción push o pull iniciada por el cliente se gestiona a través de la puerta de enlace DMZ, y las transacciones push salientes las inicia el servidor EFT, ya sea desde el firewall corporativo o desde un servidor EFT ubicado en la DMZ. En este ejemplo, el socio cuenta con un servidor de transferencia de archivos para gestionar las operaciones push salientes iniciadas por el servidor EFT.
+                        <img src="IMG/IMG_Course2_Topic3_li2.gif" alt="Imagen del Tema 3 li 2" class="module-image-curso">
+                    </li>
+                    <li><strong>Doble servidor EFT y doble DMZ en un grupo de servidores:</strong> En la arquitectura ilustrada a continuación, 2 servidores EFT y 2 servidores de enlace DMZ en un clúster de servidores cumplen con los requisitos de continuidad comercial que requieren la duplicación de servidores para proporcionar un clúster de conmutación por error.
+                        <img src="IMG/IMG_Course2_Topic3_li3.gif" alt="Imgane del Tema 3 li 3" class="module-image-curso">
+                    </li>
                 </ul>
-                <img src="IMG/IMG1.png" alt="Imagen del Tema 3" class="module-image-curso">
             </article>
     
             <!-- Módulo 4 -->
-            <article class="module-curso" id="module4">
+            <!--<article class="module-curso" id="module4">
                 <h3>Tema 4: Apoyo</h3>
                 <p>
                     Aprende cómo acceder al soporte técnico del servidor EFT, incluyendo documentación, foros y asistencia directa para resolver problemas...
@@ -186,7 +197,7 @@
                 <img src="IMG/IMG1.png" alt="Imagen del Tema 4" class="module-image-curso">
             </article>
     
-            <!-- Módulo 5 -->
+            
             <article class="module-curso" id="module5">
                 <h3>Tema 5: ¿Qué hay de nuevo en el servidor EFT?</h3>
                 <p>
@@ -198,7 +209,7 @@
                     <li><strong>Nuevas funcionalidades:</strong> Herramientas avanzadas para la gestión de usuarios y automatización de tareas.</li>
                 </ul>
                 <img src="IMG/IMG1.png" alt="Imagen del Tema 5" class="module-image-curso">
-            </article>
+            </article>-->
         </section>
     </main>
     
