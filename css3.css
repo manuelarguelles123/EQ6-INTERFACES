@@ -16,6 +16,21 @@ div, ul, ol {
     height: calc(100vh - 60px); /* Altura total menos el encabezado */
 }
 
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .main-content-curso * {
+        visibility: visible;
+    }
+
+    .main-content-curso {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
 /* Encabezado */
 .header {
     background-color: #007bff;
