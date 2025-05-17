@@ -18,18 +18,22 @@ div, ul, ol {
 
 @media print {
     body * {
-        visibility: hidden;
+      visibility: hidden;
     }
+    .main-content-curso,
     .main-content-curso * {
-        visibility: visible;
-    }
-
+      visibility: visible;
+    } /*Alv con esto*/
     .main-content-curso {
-        position: absolute;
-        top: 0;
-        left: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto !important;    
+      overflow: visible !important; 
     }
-}
+  }
+  
 
 /* Encabezado */
 .header {
