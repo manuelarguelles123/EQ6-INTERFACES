@@ -136,6 +136,17 @@ function toggleEditDeleteButtons(enable) {
     }
 }
 
+function logout() {
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  }
+  
+  document.getElementById('logout-btn')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+  });
+
 // Vincular eventos al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     loadNotes();
@@ -302,6 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
             notificationsModal.classList.remove("active");
         }
-    });
+    });    
 });
 
